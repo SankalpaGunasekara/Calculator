@@ -24,7 +24,7 @@ export class CalcComponent implements OnInit{ //NgOnInit() method will be initia
   btnClick(button:any){ // this will control the button behaviours
 
     let btnText = button.textContent // Get the text content of the clicked button and store it in the variable btnText.
-    this.InputString.controls.text.setValue(btnText) 
+    this.InputString.controls.text.setValue(this.InputString.controls.text.value+btnText) 
 
   }
 }
