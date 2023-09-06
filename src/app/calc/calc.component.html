@@ -13,13 +13,13 @@
     <div class="container">
         <div class="display">
             <!-- <h1></h1> -->
-            <form action="" [formGroup]="userInput">
+            <form action="" [formGroup]="InputString">
                 <input formControlName="text" class="input-field" />
             </form>
 
             <div class="operators">
                 <div class="col-auto ">
-                    <button class="btn btn-success">+</button>
+                    <button (click)="btnClick($event.target)" class="btn btn-success">+</button>
                     <button class="btn btn-success">-</button>
                     <button class="btn btn-success">*</button>
                     <button class="btn btn-success">/</button>
@@ -27,23 +27,23 @@
 
             </div>
             <div class="operands col-auto">
-                <button class="btn btn-primary">1</button>
-                <button class="btn btn-primary">2</button>
-                <button class="btn btn-primary">3</button>
-                <button class="btn btn-primary">4</button>
+                <button (click)="btnClick($event.target)" class=" btn btn-primary ">1</button>
+                <button class="btn btn-primary ">2</button>
+                <button class="btn btn-primary ">3</button>
+                <button class="btn btn-primary ">4</button>
             </div>
-            <div class="operands col-auto">
-                <button class="btn btn-primary">5</button>
-                <button class="btn btn-primary">6</button>
-                <button class="btn btn-primary">7</button>
-                <button class="btn btn-primary">8</button>
+            <div class="operands col-auto ">
+                <button class="btn btn-primary ">5</button>
+                <button class="btn btn-primary ">6</button>
+                <button class="btn btn-primary ">7</button>
+                <button class="btn btn-primary ">8</button>
             </div>
-            <div class="operands col-auto">
-                <button class="btn btn-primary">9</button>
-                <button class="btn btn-primary">0</button>
-                <!-- <button class="btn hidden-button">0</button> -->
-                <!-- <button class="btn hidden-button">0</button> -->
-                <button class="btn btn-warning" style="width:38%">Enter</button>
+            <div class="operands col-auto ">
+                <button class="btn btn-primary ">9</button>
+                <button class="btn btn-primary ">0</button>
+                <!-- <button class="btn hidden-button ">0</button> -->
+                <!-- <button class="btn hidden-button ">0</button> -->
+                <button class="btn btn-warning " style="width:38% ">Enter</button>
             </div>
         </div>
     </div>

@@ -12,10 +12,19 @@ export class CalcComponent implements OnInit{ //NgOnInit() method will be initia
 
   }
 
-  userInput:any;
+  InputString:any;
   ngOnInit(): void {
-      this.userInput = new FormGroup({
+      this.InputString = new FormGroup({
         text:new FormControl()
       })
+
+
+  }
+
+  btnClick(button:any){ // this will control the button behaviours
+
+    let btnText = button.textContent // Get the text content of the clicked button and store it in the variable btnText.
+    this.InputString.controls.text.setValue(btnText) 
+
   }
 }
