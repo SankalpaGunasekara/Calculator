@@ -1,30 +1,34 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup, FormControl} from '@angular/forms'// to access input form
+import { FormGroup, FormControl } from '@angular/forms'// to access input form
 
 @Component({
   selector: 'app-calc',
   templateUrl: './calc.component.html',
   styleUrls: ['./calc.component.css']
 })
-export class CalcComponent implements OnInit{ //NgOnInit() method will be initiated in the begining to 
+export class CalcComponent implements OnInit { //NgOnInit() method will be initiated in the begining to 
 
-  constructor(){
+  constructor() {
 
   }
 
-  InputString:any;
+  InputString: any;
   ngOnInit(): void {
-      this.InputString = new FormGroup({
-        text:new FormControl()
-      })
+    this.InputString = new FormGroup({
+      text: new FormControl()
+    })
 
 
   }
 
-  btnClick(button:any){ // this will control the button behaviours
-
+  btnClick(button: any) { // this will control the button behaviours
     let btnText = button.textContent // Get the text content of the clicked button and store it in the variable btnText.
-    this.InputString.controls.text.setValue(this.InputString.controls.text.value+btnText) 
+    if (this.InputString.controls.text.value != null) {
+      this.InputString.controls.text.setValue(this.InputString.controls.text.value + btnText)
+    }
+    else{
+      this.InputString.controls.text.setValue(btnText)
+    }
 
   }
 }
