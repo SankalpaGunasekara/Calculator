@@ -41,4 +41,9 @@ export class CalcComponent implements OnInit { //NgOnInit() method will be initi
   clearInput(){
     this.InputString.controls.text.setValue("")
   }
+
+  calculate(){
+    let output = eval(this.InputString.controls.text.value)
+    this.InputString.controls.text.setValue(output)
+  }
 }
